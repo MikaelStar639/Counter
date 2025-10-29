@@ -4,8 +4,8 @@ project(CounterApp LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Find SFML 3
-set(SFML_DIR "D:/libraries/SFML-3.0.2/lib/cmake/SFML")
+# Find SFML 
+# set(SFML_DIR ".../SFML-3.0.2/lib/cmake/SFML")
 find_package(SFML 3 REQUIRED COMPONENTS Graphics Window System)
 
 # Include headers
