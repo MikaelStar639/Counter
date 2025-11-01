@@ -6,6 +6,5 @@
 .idea/
 
 *.exe
-*.dll
 *.so
 *.dylib
