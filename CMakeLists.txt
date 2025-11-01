@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find SFML 
-# set(SFML_DIR ".../SFML-3.0.2/lib/cmake/SFML")
+set(SFML_DIR "${CMAKE_SOURCE_DIR}/external/SFML/lib/cmake/SFML")
 find_package(SFML 3 REQUIRED COMPONENTS Graphics Window System)
 
 # Include headers
@@ -24,8 +24,16 @@ target_link_libraries(${PROJECT_NAME}
         SFML::System
 )
 
-# Copy assets on build 
+# Copy assets
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
-    ${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets
+        "${CMAKE_SOURCE_DIR}/assets"
+        "$<TARGET_FILE_DIR:${PROJECT_NAME}>/assets"
+)
+
+# Copy SFML DLLs
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_SOURCE_DIR}/external/SFML/bin"
+        "$<TARGET_FILE_DIR:${PROJECT_NAME}>"
 )
