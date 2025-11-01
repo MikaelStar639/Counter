@@ -8,7 +8,6 @@ A simple counter application built with **SFML 3.0.2**.
 |----------------|----------------- |
 | CMake          | ≥ 3.15           |
 | C++ Compiler   | C++17 or newer   |
-| SFML           | 3.0.2            |
 
 ## 🛠️ Build & Run
 
@@ -24,7 +23,7 @@ cd build
 ### 2) Configure
 
 ``` bash
-cmake .. -DSFML_DIR="<Your Path>/SFML-3.0.2/lib/cmake/SFML"
+cmake ..
 ```
 
 ### 3) Build
