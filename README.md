@@ -15,7 +15,7 @@ A simple counter application built with **SFML 3.0.2**.
 
 ``` bash
 git clone https://github.com/MikaelStar639/Counter
-cd CounterApp
+cd Counter
 mkdir build
 cd build
 ```
